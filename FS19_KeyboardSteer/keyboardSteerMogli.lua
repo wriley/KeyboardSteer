@@ -13,7 +13,7 @@ function keyboardSteerMogli.prerequisitesPresent(specializations)
 end
 
 function keyboardSteerMogli.registerEventListeners(vehicleType)
-	for _,n in pairs( { "onLoad", "onPostLoad", "onUpdate", "onDraw", "onReadStream", "onWriteStream", "saveToXMLFile", "onRegisterActionEvents" } ) do
+	for _,n in pairs( { "onLoad", "onPostLoad", "onUpdate", "onReadStream", "onWriteStream", "saveToXMLFile", "onRegisterActionEvents" } ) do
 		SpecializationUtil.registerEventListener(vehicleType, n, keyboardSteerMogli)
 	end 
 end 
@@ -376,7 +376,14 @@ function keyboardSteerMogli:onUpdate(dt)
 		else
 			self.ksmMovingDir = Utils.getNoNil( self.nextMovingDirection * self.spec_drivable.reverserDirection )
 		end
-		
+        
+        if self.ksmShuttleIsOn and self:getIsVehicleControlledByPlayer() and not g_gui:getIsGuiVisible() and g_currentMission.hud:getIsVisible() then
+            if self.ksmShuttleFwd then
+                renderText(0.950, 0.100, 0.022, "F")
+            else
+                renderText(0.950, 0.100, 0.022, "R")
+            end
+        end
 		
 		if     self.ksmMovingDir < -0.5 then
 			self:ksmSetState( "ksmCamFwd", false )
