@@ -11,11 +11,11 @@
 	<!-- defaults -->
 	<adaptiveSteering    type="bool"  value="true"/>
 	<camOutsideRotation  type="bool"  value="false"/>
-	<camInsideRotation   type="bool"  value="true"/>
-	<camReverseRotation  type="bool"  value="true"/>
+	<camInsideRotation   type="bool"  value="false"/>
+	<camReverseRotation  type="bool"  value="false"/>
 	<camRevOutRotation   type="bool"  value="false"/>
 	<shuttleControl      type="bool"  value="true"/>
-	<peekLeftRight       type="bool"  value="true"/>
+	<peekLeftRight       type="bool"  value="false"/>
 </KSMGlobals>
 
 

@@ -853,7 +853,7 @@ function keyboardSteerMogli:onDraw()
 		end
 	end
 	
-	y = y + l * 1.1
+	--[[y = y + l * 1.1
 	local lx,_,lz = localDirectionToWorld( self.components[1].node, 0, 0, 1 )			
 	if lx*lx+lz*lz > 1e-6 then 
 		renderText(x, y, l, string.format( "%4.1f°", math.deg( keyboardSteerMogli.normalizeAngle( math.atan2( lx, lz ) + math.pi ))))
@@ -862,7 +862,7 @@ function keyboardSteerMogli:onDraw()
 	y = y + l * 1.1	
 	if self.ksmLastSnapAngle ~= nil then
 		renderText(x, y, l, string.format( "%4.1f°", math.deg( keyboardSteerMogli.normalizeAngle( self.ksmLastSnapAngle + math.pi ))))
-	end
+	end]]--
 	
 	setTextAlignment( RenderText.ALIGN_LEFT ) 
 	setTextVerticalAlignment( RenderText.VERTICAL_ALIGN_BASELINE )
